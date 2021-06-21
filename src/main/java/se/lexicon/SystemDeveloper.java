@@ -1,14 +1,38 @@
 package se.lexicon;
 
+import java.util.Arrays;
+
 public class SystemDeveloper extends Employee {
+
+    Employee newEmployee = new Employee();
+
+    public int certificatesAcquired = 1000;
+    public int programmingLanguagesLearned = 1500;
+    public int baseSalary = 25000;
+
     public String name;
     public String [] certificates;
-    public String[] languages;
+    public String[] programmingLanguages;
+    public int systemDeveloperSalary;
 
     public SystemDeveloper(String name, String[] certificates, String[] languages) {
         this.name = name;
         this.certificates = certificates;
-        this.languages = languages;
+        this.programmingLanguages = languages;
+        this.systemDeveloperSalary = newEmployee.CalculateSalary(baseSalary, certificatesAcquired, programmingLanguagesLearned);
+    }
+
+    @Override
+    public int CalculateSalary(int baseSalary, int achievements1, int achievements2 ) {
+        salary = baseSalary + achievements1 + achievements2;
+        return salary;
+    }
+
+    @Override
+    public String toString() {
+        return "SystemDeveloper{" + "certificatesAcquired=" + certificatesAcquired + ", programmingLanguagesLearned=" + programmingLanguagesLearned +
+                ", baseSalary=" + baseSalary + ", name='" + name + '\'' + ", certificates=" + Arrays.toString(certificates) +
+                ", programmingLanguages=" + Arrays.toString(programmingLanguages) + '}';
     }
 
     public String getName() {
@@ -27,11 +51,11 @@ public class SystemDeveloper extends Employee {
         this.certificates = certificates;
     }
 
-    public String[] getLanguages() {
-        return languages;
+    public String[] getProgrammingLanguages() {
+        return programmingLanguages;
     }
 
-    public void setLanguages(String[] languages) {
-        this.languages = languages;
+    public void setProgrammingLanguages(String[] programmingLanguages) {
+        this.programmingLanguages = programmingLanguages;
     }
 }
