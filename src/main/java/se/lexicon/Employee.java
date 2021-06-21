@@ -1,14 +1,47 @@
 package se.lexicon;
 
-public class Employee {
+import java.time.LocalDate;
 
-    public int salary;
-    public int baseSalary = 25000;
+public abstract class Employee {
 
-    public int CalculateSalary(int baseSalary, int achievements1, int achievements2 ) {
-          salary = baseSalary + achievements1 + achievements2;
+    private int id;
+    private String name;
+    public double salary;
+    private LocalDate dateHired;
+
+    public static final int BASE_SALARY = 25000;
+
+    public abstract void CalculateSalary();
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getSalary() {
         return salary;
     }
 
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
 
+    public LocalDate getDateHired() {
+        return dateHired;
+    }
+
+    public void setDateHired(LocalDate dateHired) {
+        this.dateHired = dateHired;
+    }
 }

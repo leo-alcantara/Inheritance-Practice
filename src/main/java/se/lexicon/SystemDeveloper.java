@@ -4,40 +4,45 @@ import java.util.Arrays;
 
 public class SystemDeveloper extends Employee {
 
+
     public int certificatesAcquired = 1000;
     public int programmingLanguagesLearned = 1500;
 
-    public String name;
-    public String [] certificates;
-    public String[] programmingLanguages;
-    public int systemDeveloperSalary;
+    public String[] certificates;
+    public String[] languages;
 
-    public SystemDeveloper(String name, String[] certificates, String[] languages) {
-        this.name = name;
+    public SystemDeveloper(String[] certificates, String[] languages) {
         this.certificates = certificates;
-        this.programmingLanguages = languages;
-        this.systemDeveloperSalary = CalculateSalary(baseSalary, certificatesAcquired, programmingLanguagesLearned);
+        this.languages = languages;
+        CalculateSalary();
     }
 
     @Override
-    public int CalculateSalary(int baseSalary, int achievements1, int achievements2 ) {
-        salary = baseSalary + achievements1 + achievements2;
-        return salary;
+    public void CalculateSalary() {
+        salary = Employee.BASE_SALARY + (certificatesAcquired * certificates.length) + (programmingLanguagesLearned * programmingLanguages.length);
     }
 
     @Override
     public String toString() {
-        return "SystemDeveloper{" + "certificatesAcquired=" + certificatesAcquired + ", programmingLanguagesLearned=" + programmingLanguagesLearned +
-                ", baseSalary=" + baseSalary + ", name='" + name + '\'' + ", certificates=" + Arrays.toString(certificates) +
-                ", programmingLanguages=" + Arrays.toString(programmingLanguages) + '}';
+        return "SystemDeveloper{" + "certificatesAcquired=" + certificatesAcquired +
+                ", programmingLanguagesLearned=" + programmingLanguagesLearned + ", certificates=" + Arrays.toString(certificates) +
+                ", languages=" + Arrays.toString(languages) + '}';
     }
 
-    public String getName() {
-        return name;
+    public int getCertificatesAcquired() {
+        return certificatesAcquired;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCertificatesAcquired(int certificatesAcquired) {
+        this.certificatesAcquired = certificatesAcquired;
+    }
+
+    public int getProgrammingLanguagesLearned() {
+        return programmingLanguagesLearned;
+    }
+
+    public void setProgrammingLanguagesLearned(int programmingLanguagesLearned) {
+        this.programmingLanguagesLearned = programmingLanguagesLearned;
     }
 
     public String[] getCertificates() {
@@ -48,11 +53,11 @@ public class SystemDeveloper extends Employee {
         this.certificates = certificates;
     }
 
-    public String[] getProgrammingLanguages() {
-        return programmingLanguages;
+    public String[] getLanguages() {
+        return languages;
     }
 
-    public void setProgrammingLanguages(String[] programmingLanguages) {
-        this.programmingLanguages = programmingLanguages;
+    public void setLanguages(String[] languages) {
+        this.languages = languages;
     }
 }

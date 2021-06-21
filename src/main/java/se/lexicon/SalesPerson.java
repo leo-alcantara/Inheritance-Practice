@@ -7,52 +7,58 @@ public class SalesPerson extends Employee {
     public int newClientAcquired = 1000;
     public int everyMaintainedClient = 500;
 
-    public String name;
-    public String [] maintainedClients;
-    public String[] newClient;
-    public int salesPersonSalary;
 
-    public SalesPerson(String name, String[] maintainedClients, String[] newClient) {
-        this.name = name;
-        this.maintainedClients = maintainedClients;
-        this.newClient = newClient;
-        this.salesPersonSalary = CalculateSalary(baseSalary, newClientAcquired, everyMaintainedClient);
+    private String [] clients;
+    private String[] acquiredClients;
+
+
+    public SalesPerson(String[] clients, String[] acquiredClients) {
+        this.clients = clients;
+        this.acquiredClients = acquiredClients;
+        CalculateSalary();
     }
 
     @Override
-    public int CalculateSalary(int baseSalary, int achievements1, int achievements2 ) {
-        salary = baseSalary + achievements1 + achievements2;
-        return salary;
+    public void CalculateSalary() {
+        salary = Employee.BASE_SALARY + (newClientAcquired * acquiredClients.length) + (everyMaintainedClient * clients.length);
     }
 
     @Override
     public String toString() {
-        return "SalesPerson{" + "baseSalary=" + baseSalary + ", newClientAcquired=" + newClientAcquired +
-                ", everyMaintainedClient=" + everyMaintainedClient + ", name='" + name + '\'' + ", maintainedClients="
-                + Arrays.toString(maintainedClients) + ", newClient=" + Arrays.toString(newClient) + '}';
+        return "SalesPerson{" + "newClientAcquired=" + newClientAcquired +
+                ", everyMaintainedClient=" + everyMaintainedClient + ", clients=" + Arrays.toString(clients) +
+                ", acquiredClients=" + Arrays.toString(acquiredClients) + '}';
     }
 
-    public String getName() {
-        return name;
+    public int getNewClientAcquired() {
+        return newClientAcquired;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNewClientAcquired(int newClientAcquired) {
+        this.newClientAcquired = newClientAcquired;
     }
 
-    public String[] getMaintainedClients() {
-        return maintainedClients;
+    public int getEveryMaintainedClient() {
+        return everyMaintainedClient;
     }
 
-    public void setMaintainedClients(String[] maintainedClients) {
-        this.maintainedClients = maintainedClients;
+    public void setEveryMaintainedClient(int everyMaintainedClient) {
+        this.everyMaintainedClient = everyMaintainedClient;
     }
 
-    public String[] getNewClient() {
-        return newClient;
+    public String[] getClients() {
+        return clients;
     }
 
-    public void setNewClient(String[] newClient) {
-        this.newClient = newClient;
+    public void setClients(String[] clients) {
+        this.clients = clients;
+    }
+
+    public String[] getAcquiredClients() {
+        return acquiredClients;
+    }
+
+    public void setAcquiredClients(String[] acquiredClients) {
+        this.acquiredClients = acquiredClients;
     }
 }
