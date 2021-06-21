@@ -18,6 +18,8 @@ public class SalesPerson extends Employee {
         CalculateSalary();
     }
 
+    SalesPerson salesPerson01 = new SalesPerson(getClients(), getAcquiredClients());
+
     @Override
     public void CalculateSalary() {
         salary = Employee.BASE_SALARY + (newClientAcquired * acquiredClients.length) + (everyMaintainedClient * clients.length);

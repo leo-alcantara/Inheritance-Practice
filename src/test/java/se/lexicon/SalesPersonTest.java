@@ -4,25 +4,15 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class SystemDeveloperTest {
+public class SalesPersonTest {
 
     @Test
-    public void calculateSalary() {
+    public void createSalesPerson() {
 
         //Arrange
-
-        //Act
-
-        //Assert
-    }
-
-    @Test
-    public void createSystemDeveloper() {
-
-        //Arrange
-        SalesPerson newSalesPerson;
         String[] clients = {};
         String[] acquiredClients = {};
+        SalesPerson newSalesPerson;
 
         //Act
         newSalesPerson = new SalesPerson(clients, acquiredClients);
@@ -32,6 +22,9 @@ public class SystemDeveloperTest {
         assertEquals(acquiredClients, newSalesPerson.getAcquiredClients());
 
     }
+
+
+
 
 
 }

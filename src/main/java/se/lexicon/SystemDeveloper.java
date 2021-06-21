@@ -14,12 +14,17 @@ public class SystemDeveloper extends Employee {
     public SystemDeveloper(String[] certificates, String[] languages) {
         this.certificates = certificates;
         this.languages = languages;
+        //getName();
+        //getId();
+        //getDateHired();
         CalculateSalary();
     }
 
+    SystemDeveloper systemDeveloper01 = new SystemDeveloper(getCertificates(), getLanguages());
+
     @Override
     public void CalculateSalary() {
-        salary = Employee.BASE_SALARY + (certificatesAcquired * certificates.length) + (programmingLanguagesLearned * programmingLanguages.length);
+        salary = Employee.BASE_SALARY + (certificatesAcquired * certificates.length) + (programmingLanguagesLearned * languages.length);
     }
 
     @Override
