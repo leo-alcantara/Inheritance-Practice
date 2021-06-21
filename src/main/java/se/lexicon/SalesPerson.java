@@ -4,9 +4,6 @@ import java.util.Arrays;
 
 public class SalesPerson extends Employee {
 
-    Employee newEmployee = new Employee();
-
-    public int baseSalary = 25000;
     public int newClientAcquired = 1000;
     public int everyMaintainedClient = 500;
 
@@ -19,7 +16,7 @@ public class SalesPerson extends Employee {
         this.name = name;
         this.maintainedClients = maintainedClients;
         this.newClient = newClient;
-        this.salesPersonSalary = newEmployee.CalculateSalary(baseSalary, newClientAcquired, everyMaintainedClient);
+        this.salesPersonSalary = CalculateSalary(baseSalary, newClientAcquired, everyMaintainedClient);
     }
 
     @Override

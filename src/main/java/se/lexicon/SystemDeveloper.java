@@ -4,11 +4,8 @@ import java.util.Arrays;
 
 public class SystemDeveloper extends Employee {
 
-    Employee newEmployee = new Employee();
-
     public int certificatesAcquired = 1000;
     public int programmingLanguagesLearned = 1500;
-    public int baseSalary = 25000;
 
     public String name;
     public String [] certificates;
@@ -19,7 +16,7 @@ public class SystemDeveloper extends Employee {
         this.name = name;
         this.certificates = certificates;
         this.programmingLanguages = languages;
-        this.systemDeveloperSalary = newEmployee.CalculateSalary(baseSalary, certificatesAcquired, programmingLanguagesLearned);
+        this.systemDeveloperSalary = CalculateSalary(baseSalary, certificatesAcquired, programmingLanguagesLearned);
     }
 
     @Override
