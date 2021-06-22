@@ -1,5 +1,6 @@
 package se.lexicon;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 
 public class SystemDeveloper extends Employee {
@@ -11,16 +12,12 @@ public class SystemDeveloper extends Employee {
     public String[] certificates;
     public String[] languages;
 
-    public SystemDeveloper(String[] certificates, String[] languages) {
+    public SystemDeveloper(int id, String name, LocalDate dateHired, String[] certificates, String[] languages) {
+        super(id, name, dateHired);
         this.certificates = certificates;
         this.languages = languages;
-        //getName();
-        //getId();
-        //getDateHired();
         CalculateSalary();
     }
-
-    SystemDeveloper systemDeveloper01 = new SystemDeveloper(getCertificates(), getLanguages());
 
     @Override
     public void CalculateSalary() {

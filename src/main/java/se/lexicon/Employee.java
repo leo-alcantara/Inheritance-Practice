@@ -11,6 +11,13 @@ public abstract class Employee {
 
     public static final int BASE_SALARY = 25000;
 
+    public Employee (int id, String name, LocalDate dateHired){
+        this.id = id;
+        this.name = name;
+        this.dateHired = dateHired;
+        this.salary = BASE_SALARY;
+    }
+
     public abstract void CalculateSalary();
 
     public int getId() {

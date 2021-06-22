@@ -1,5 +1,6 @@
 package se.lexicon;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 
 public class SalesPerson extends Employee {
@@ -12,13 +13,12 @@ public class SalesPerson extends Employee {
     private String[] acquiredClients;
 
 
-    public SalesPerson(String[] clients, String[] acquiredClients) {
+    public SalesPerson(int id, String name, LocalDate dateHired, String[] clients, String[] acquiredClients) {
+        super(id, name, dateHired);
         this.clients = clients;
         this.acquiredClients = acquiredClients;
         CalculateSalary();
     }
-
-    SalesPerson salesPerson01 = new SalesPerson(getClients(), getAcquiredClients());
 
     @Override
     public void CalculateSalary() {
